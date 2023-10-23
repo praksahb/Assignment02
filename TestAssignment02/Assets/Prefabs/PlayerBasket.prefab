@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5680004941356630416}
   - component: {fileID: 3729164469173112512}
   - component: {fileID: 4470203577672840918}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerBasket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,18 +96,18 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032610576728191713}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &3729164469173112512
 BoxCollider2D:
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ec0784f3c06424e9999406639719e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
+  moveSpeed: 7
 --- !u!1 &5025300025831154361
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,10 +157,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5029739091918236176}
-  - component: {fileID: 2306019410510076897}
   - component: {fileID: 914938491330577945}
-  - component: {fileID: 8264535551899278888}
-  m_Layer: 0
+  - component: {fileID: 1708689011}
+  - component: {fileID: 8432687751944919949}
+  m_Layer: 8
   m_Name: ScoreTracker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,14 +187,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.056, y: -1.322}
   m_SizeDelta: {x: 2.653, y: 1.594}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2306019410510076897
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5025300025831154361}
-  m_CullTransparentMesh: 1
 --- !u!23 &914938491330577945
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -237,7 +229,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 4
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8264535551899278888
+--- !u!114 &1708689011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5025300025831154361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e1f3c011cec2c4e9bb31b1409f072f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8432687751944919949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -257,7 +261,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -292,7 +296,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
