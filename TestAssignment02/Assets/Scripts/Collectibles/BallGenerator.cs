@@ -1,13 +1,15 @@
+using System;
 using UnityEngine;
 
-namespace BasketCollector.GenerateBalls
+namespace BasketCollector.Collectibles
 {
     public class BallGenerator : MonoBehaviour
     {
         [SerializeField] private BallView ballPrefab;
-        [SerializeField] private float YPosition;
+        [SerializeField] private float yPosition;
         [SerializeField] private float timerVal;
         [SerializeField] private int ballSpeedVal;
+        [SerializeField] private Transform spawnPoint;
 
 
         private bool isCreatingBalls;
@@ -35,15 +37,23 @@ namespace BasketCollector.GenerateBalls
 
         }
 
-        private void GenerateBall()
+        private void GenerateBalls()
         {
-            BallView ball = Object.Instantiate(ballPrefab);
-            float XPosition = Random.Range(-8, 9);
-            ball.transform.position = new Vector2(XPosition, YPosition);
+            BallView ball = Instantiate(ballPrefab);
+            float XPosition = UnityEngine.Random.Range(-8, 9);
+            ball.transform.position = new Vector2(XPosition, yPosition);
             ball.SpeedVal = ballSpeedVal;
         }
 
+        private void GenerateBall()
+        {
+            int value = UnityEngine.Random.Range(-5, 6);
 
+            BallModel ballModel = new BallModel(value);
+            Tuple<int, int> boundary = new Tuple<int, int>(-8, 8);
+            BallController ballController = new BallController(ballModel, ballPrefab, boundary, spawnPoint);
+            ballController.SetBallSpeed(ballSpeedVal);
+        }
 
     }
 }
