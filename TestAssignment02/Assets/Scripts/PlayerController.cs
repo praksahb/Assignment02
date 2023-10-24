@@ -1,3 +1,4 @@
+using BasketCollector.Collectibles;
 using UnityEngine;
 
 namespace BasketCollector.PlayerMovement
@@ -35,7 +36,7 @@ namespace BasketCollector.PlayerMovement
         {
             if (collider.TryGetComponent(out BallView ball))
             {
-                scoreTracker.IncreaseScore();
+                scoreTracker.IncreaseScore(ball.BallController.BallModel.Value);
                 Destroy(ball.gameObject);
             }
         }

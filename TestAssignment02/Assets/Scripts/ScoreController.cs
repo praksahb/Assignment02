@@ -14,9 +14,9 @@ namespace BasketCollector
             scoreText = GetComponent<TextMeshPro>();
         }
 
-        public void IncreaseScore()
+        public void IncreaseScore(int value)
         {
-            scoreVal++;
+            scoreVal += value;
             scoreText.SetText(scoreVal.ToString());
         }
 
