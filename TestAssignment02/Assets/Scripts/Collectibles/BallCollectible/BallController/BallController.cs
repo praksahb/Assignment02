@@ -21,11 +21,9 @@ namespace BasketCollector.Collectibles
             BallView.SpeedVal = speed;
         }
 
-
         private Vector2 SpawnPosition(System.Tuple<int, int> boundary, float YPosition)
         {
             float XPosition = Random.Range(boundary.Item1, boundary.Item2 + 1);
-
             return new Vector2(XPosition, YPosition);
         }
     }

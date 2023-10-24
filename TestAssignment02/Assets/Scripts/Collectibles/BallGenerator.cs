@@ -61,7 +61,7 @@ namespace BasketCollector.Collectibles
             int value = UnityEngine.Random.Range(-5, 6);
 
             BallModel ballModel = new BallModel(value);
-            Tuple<int, int> boundary = new Tuple<int, int>(-8, 8);
+            Tuple<int, int> boundary = new Tuple<int, int>(-7, 7);
             BallController ballController = new BallController(ballModel, ballPrefab, boundary, spawnPoint);
             ballController.SetBallSpeed(ballSpeedVal);
         }
