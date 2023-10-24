@@ -5,7 +5,6 @@ namespace BasketCollector
 {
     public class ScoreController : MonoBehaviour
     {
-
         private TextMeshPro scoreText;
         private int scoreVal = 0;
 
@@ -14,10 +13,15 @@ namespace BasketCollector
             scoreText = GetComponent<TextMeshPro>();
         }
 
-        public void IncreaseScore()
+        public void IncreaseScore(int value)
         {
-            scoreVal++;
+            scoreVal += value;
             scoreText.SetText(scoreVal.ToString());
+        }
+
+        public int GetScore()
+        {
+            return scoreVal;
         }
 
     }
