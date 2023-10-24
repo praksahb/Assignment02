@@ -5,7 +5,15 @@ namespace BasketCollector.PlayerMovement
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] private float moveSpeed;
+        private float moveSpeed;
+        public float MoveSpeed
+        {
+            get { return moveSpeed; }
+            set
+            {
+                moveSpeed = value;
+            }
+        }
 
         private ScoreController scoreTracker;
 
@@ -39,6 +47,11 @@ namespace BasketCollector.PlayerMovement
                 scoreTracker.IncreaseScore(ball.BallController.BallModel.Value);
                 Destroy(ball.gameObject);
             }
+        }
+
+        public int GetScore()
+        {
+            return scoreTracker.GetScore();
         }
     }
 }

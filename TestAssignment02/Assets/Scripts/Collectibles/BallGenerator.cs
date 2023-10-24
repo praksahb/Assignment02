@@ -6,19 +6,38 @@ namespace BasketCollector.Collectibles
     public class BallGenerator : MonoBehaviour
     {
         [SerializeField] private BallView ballPrefab;
-        [SerializeField] private float yPosition;
-        [SerializeField] private float timerVal;
-        [SerializeField] private int ballSpeedVal;
         [SerializeField] private Transform spawnPoint;
 
+        private float timerOriginal;
+        private float timerVal;
+        public float BallSetTimer
+        {
+            get { return timerVal; }
+            set
+            {
+                timerVal = value;
+                timerOriginal = value;
+            }
+        }
+
+        private int ballSpeedVal;
+        public int BallSpeed
+        {
+            get { return ballSpeedVal; }
+            set
+            {
+                ballSpeedVal = value;
+            }
+        }
 
         private bool isCreatingBalls;
-        private float timerOriginal;
-
-        private void Awake()
+        public bool IsCreatingBalls
         {
-            isCreatingBalls = true;
-            timerOriginal = timerVal;
+            get { return isCreatingBalls; }
+            set
+            {
+                isCreatingBalls = value;
+            }
         }
 
         private void Update()
@@ -35,14 +54,6 @@ namespace BasketCollector.Collectibles
                 }
             }
 
-        }
-
-        private void GenerateBalls()
-        {
-            BallView ball = Instantiate(ballPrefab);
-            float XPosition = UnityEngine.Random.Range(-8, 9);
-            ball.transform.position = new Vector2(XPosition, yPosition);
-            ball.SpeedVal = ballSpeedVal;
         }
 
         private void GenerateBall()

@@ -2,13 +2,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace BasketCollector
+namespace BasketCollector.UI
 {
     public class GameOverPanel : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI ScoreText;
+        [SerializeField] private TextMeshProUGUI scoreText;
         [SerializeField] private Button backButton;
 
+        public GameManager GameManager { get; set; }
 
         private void OnEnable()
         {
@@ -22,8 +23,12 @@ namespace BasketCollector
 
         private void BackFunction()
         {
-            // go back to the settings/ play game menu
+            GameManager.LoadStartMenu();
+        }
 
+        public void SetScore(int value)
+        {
+            scoreText.SetText("Score: " + value.ToString());
         }
     }
 }

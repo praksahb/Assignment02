@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace BasketCollector
+namespace BasketCollector.UI
 {
     public class GameStartPanel : MonoBehaviour
     {
@@ -9,13 +9,10 @@ namespace BasketCollector
         [SerializeField] private Slider ballTimerSlider;
         [SerializeField] private Slider ballSpeedSlider;
         [SerializeField] private Slider playerMoveSpeedSlider;
+        [SerializeField] private Button startButton;
 
-        private Button startButton;
+        public GameManager GameManager { get; set; }
 
-        private void Awake()
-        {
-            startButton = GetComponent<Button>();
-        }
 
         private void OnEnable()
         {
@@ -37,7 +34,8 @@ namespace BasketCollector
 
             GameData newGameData = new GameData(totalTimer, BallLaunchTimer, ballSpeed, playerMoveSpeed);
 
-
+            // handle game start and close/open panels with gameManager with or without UIManager for small scoped project
+            GameManager.StartGame(newGameData);
         }
 
     }

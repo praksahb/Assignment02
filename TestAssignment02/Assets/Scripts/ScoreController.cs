@@ -5,7 +5,6 @@ namespace BasketCollector
 {
     public class ScoreController : MonoBehaviour
     {
-
         private TextMeshPro scoreText;
         private int scoreVal = 0;
 
@@ -18,6 +17,11 @@ namespace BasketCollector
         {
             scoreVal += value;
             scoreText.SetText(scoreVal.ToString());
+        }
+
+        public int GetScore()
+        {
+            return scoreVal;
         }
 
     }

@@ -275,6 +275,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103036517}
   m_CullTransparentMesh: 1
+--- !u!1 &112715310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 112715312}
+  - component: {fileID: 112715311}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &112715311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112715310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2211465a1c7e254438f581a9de942533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerController: {fileID: 1596243444}
+  ballGenerator: {fileID: 1745796779}
+  playerController: {fileID: 265133020}
+  gameStartPanel: {fileID: 1771843445}
+  gameOverPanel: {fileID: 2145587697}
+--- !u!4 &112715312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112715310}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &120445357
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,9 +648,9 @@ RectTransform:
   m_Father: {fileID: 2145587693}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -30.69965}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &172973930
@@ -927,6 +976,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199055646}
   m_CullTransparentMesh: 1
+--- !u!114 &265133020 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4470203577672840918, guid: 5357d8ae09e9a42499652e75fa79231a, type: 3}
+  m_PrefabInstance: {fileID: 2032610575407051278}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ec0784f3c06424e9999406639719e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &271035973
 GameObject:
   m_ObjectHideFlags: 0
@@ -3049,9 +3109,9 @@ RectTransform:
   m_Father: {fileID: 2145587693}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150, y: -169.30035}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 99.43, y: 27.2014}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1379524122
@@ -3813,9 +3873,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 507426823, guid: b1bcf64383a9346498330acd77a9d73d, type: 3}
-  yPosition: 0
-  timerVal: 3
-  ballSpeedVal: 4
   spawnPoint: {fileID: 1676204278}
 --- !u!4 &1745796780
 Transform:
@@ -3912,6 +3969,7 @@ GameObject:
   - component: {fileID: 1771843443}
   - component: {fileID: 1771843442}
   - component: {fileID: 1771843444}
+  - component: {fileID: 1771843445}
   m_Layer: 5
   m_Name: GameStartPanel
   m_TagString: Untagged
@@ -4009,6 +4067,23 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1771843445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771843440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0d610d317b864d46952c8e470035bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameTimerSlider: {fileID: 143732471}
+  ballTimerSlider: {fileID: 199039639}
+  ballSpeedSlider: {fileID: 1289732124}
+  playerMoveSpeedSlider: {fileID: 1017363283}
+  startButton: {fileID: 742505577}
 --- !u!1 &1795848231
 GameObject:
   m_ObjectHideFlags: 0
@@ -4456,7 +4531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2145587693
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4555,7 +4630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb729a25e305aa1419ac408fc6c2e4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreText: {fileID: 172973930}
+  scoreText: {fileID: 172973930}
   backButton: {fileID: 1379524122}
 --- !u!1001 &2032610575407051278
 PrefabInstance:

@@ -3,6 +3,8 @@ using UnityEngine;
 
 namespace BasketCollector
 {
+    // Stores/Modifies value of the ball collectibles
+
     public class ValueTracker : MonoBehaviour
     {
         private TMPro.TextMeshProUGUI valueText;
